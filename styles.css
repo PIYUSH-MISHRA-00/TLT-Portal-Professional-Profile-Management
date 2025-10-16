@@ -1,0 +1,407 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables for consistent theming */
+:root {
+  /* Colors */
+  --background: #2B414F; /* Dark Slate Blue */
+  --foreground: #FFFFFF; /* White */
+  --label-color: #C6B98B; /* Gold tone */
+  --input-bg: #3A5060; /* Slightly lighter than background */
+  --input-border: #4A5D6D;
+  --input-text: #999999; /* Gray */
+  --input-placeholder: #999999; /* Gray */
+  --primary: #295BFF; /* Blue for submit button */
+  --outline: #FFFFFF; /* White for cancel button */
+  --border: #4A5D6D;
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --heading-size: 24px;
+  --label-size: 14px;
+  --input-size: 14px;
+  --button-size: 14px;
+  
+  /* Spacing */
+  --page-padding-top: 40px;
+  --page-padding-sides: 40px;
+  --field-gap: 32px;
+  --button-spacing: 24px;
+  --form-padding: 48px;
+  
+  /* Dimensions */
+  --input-height: 40px;
+  --border-radius: 8px;
+  --button-min-width: 140px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  padding: 16px var(--page-padding-sides);
+  background-color: var(--background);
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo svg {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.logo-subtitle {
+  font-size: 12px;
+  color: var(--label-color);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.user-role {
+  font-size: 12px;
+  color: var(--label-color);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(198, 185, 139, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Main Content Styles */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--page-padding-top) var(--page-padding-sides);
+  min-height: calc(100vh - 80px);
+}
+
+.form-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  padding: 32px var(--form-padding) 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.form-header {
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: var(--heading-size);
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 29px;
+}
+
+/* Form Styles */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--field-gap);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-label {
+  font-size: var(--label-size);
+  font-weight: 500;
+  color: var(--label-color);
+  display: block;
+  height: 20px; /* Ensure consistent height for alignment */
+}
+
+.form-label.invisible {
+  visibility: hidden; /* Use visibility instead of position absolute for better alignment */
+  height: 20px; /* Match visible label height */
+}
+
+.form-input {
+  height: var(--input-height);
+  padding: 12px 16px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  color: var(--input-text);
+  font-size: var(--input-size);
+  font-family: var(--font-family);
+  outline: none;
+  transition: border-color 0.2s ease;
+  align-self: stretch;
+}
+
+.form-input:focus {
+  border-color: var(--primary);
+}
+
+.form-input::placeholder {
+  color: var(--input-placeholder);
+}
+
+/* Select Styles */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper:focus-within .form-select {
+  border-color: var(--primary);
+}
+
+.form-select {
+  height: var(--input-height);
+  padding: 12px 16px;
+  padding-right: 40px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  color: var(--input-text);
+  font-size: var(--input-size);
+  font-family: var(--font-family);
+  appearance: none;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  align-self: stretch;
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+}
+
+.form-select option {
+  background-color: var(--input-bg);
+  color: var(--foreground);
+}
+
+.select-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checkbox Styles */
+.checkbox-container {
+  padding: 16px 0;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: var(--input-size);
+  color: var(--foreground);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+/* Button Styles */
+.button-container {
+  display: flex;
+  flex-direction: row; /* Change to row for left alignment */
+  gap: 24px;
+  padding-top: 24px;
+  justify-content: flex-start; /* Align buttons to the left */
+}
+
+.btn {
+  height: var(--input-height);
+  min-width: var(--button-min-width);
+  padding: 0 24px;
+  border-radius: var(--border-radius);
+  font-size: var(--button-size);
+  font-weight: 400;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto; /* Allow buttons to size naturally */
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #1a4ae0;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--outline);
+  border: 1px solid var(--outline);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --page-padding-sides: 24px;
+    --form-padding: 24px;
+  }
+  
+  .header {
+    padding: 16px var(--page-padding-sides);
+  }
+  
+  .header-container {
+    flex-direction: row;
+  }
+  
+  .user-text {
+    display: none;
+  }
+  
+  .form-container {
+    padding: 32px var(--form-padding) 40px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .button-container {
+    flex-direction: row; /* Keep row layout on mobile */
+    justify-content: flex-start; /* Align to left on mobile */
+    padding-top: 24px;
+  }
+  
+  .btn {
+    width: auto; /* Allow natural sizing on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --page-padding-sides: 16px;
+    --form-padding: 16px;
+  }
+  
+  .logo-title {
+    font-size: 18px;
+  }
+  
+  .form-container {
+    padding: 24px var(--form-padding) 32px;
+  }
+  
+  .form-title {
+    font-size: 20px;
+  }
+}

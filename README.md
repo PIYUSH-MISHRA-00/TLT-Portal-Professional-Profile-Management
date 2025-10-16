@@ -1,191 +1,75 @@
-# TLT Portal - Professional Profile Management
+# TLT Profile Page - Static HTML/CSS Version
 
-A modern, responsive web application for creating and managing professional profiles, built with React, TypeScript, Vite, and shadcn/ui components.
-
-## Table of Contents
-
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Development](#development)
-  - [Build](#build)
-- [Components](#components)
-- [Pages](#pages)
-- [Styling](#styling)
-- [Routing](#routing)
-- [Available Scripts](#available-scripts)
-
-## Project Overview
-
-The TLT Portal is a professional profile management application designed to help users create and maintain their professional profiles. The application features a clean, modern UI with responsive design principles, allowing users to input personal information, professional roles, specialties, and location details.
-
-## Features
-
-- Responsive profile creation form
-- Form validation for user inputs
-- Role and specialty selection
-- Location selection (country and city)
-- Producer designation checkbox
-- Clean, modern UI with consistent styling
-- Responsive design for all device sizes
-- Error handling for invalid routes
-
-## Tech Stack
-
-- **Frontend Framework**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Routing**: React Router v6
-- **UI Components**: shadcn/ui with Radix UI primitives
-- **Styling**: Tailwind CSS
-- **Form Handling**: React Hook Form
-- **State Management**: React Query (TanStack Query)
-- **Icons**: Lucide React
-- **Validation**: Zod
+This is the static HTML/CSS implementation of the "Create Your Profile" page as required by the TLT assessment.
 
 ## Project Structure
 
 ```
-src/
-├── components/
-│   ├── ui/                 # shadcn/ui components
-│   ├── ProfileForm.tsx     # Main profile creation form
-│   └── ProfileHeader.tsx   # Application header
-├── hooks/                  # Custom React hooks
-├── lib/                    # Utility functions
-├── pages/
-│   ├── Index.tsx           # Main page with profile form
-│   └── NotFound.tsx        # 404 error page
-├── App.tsx                 # Root application component
-├── main.tsx                # Application entry point
-└── vite-env.d.ts           # Vite environment types
+static-version/
+├── index.html      # Main HTML file
+├── styles.css      # Custom CSS styling
+└── README.md       # This file
 ```
 
-## Getting Started
+## Features
 
-### Prerequisites
+1. **Fully Responsive Design**
+   - Desktop view
+   - Mobile view
+   - No horizontal scrolling on mobile
 
-- Node.js (version 16 or higher)
-- npm, yarn, or bun package manager
+2. **Semantic HTML5 Structure**
+   - Properly structured HTML with semantic elements
+   - Accessible form elements with labels
 
-### Installation
+3. **Design Compliance**
+   - Dark background (#2B414F) with light text fields
+   - Inter font family
+   - Consistent spacing and padding
+   - Rounded input fields (8px border radius)
+   - Proper color scheme for headings, labels, and inputs
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
+4. **Form Components**
+   - First Name & Last Name inputs
+   - Email & Mobile No inputs
+   - Role dropdown
+   - Specialty Type dropdown
+   - "Is this user a producer?" checkbox
+   - Location dropdowns (Country & City)
+   - Cancel and Submit buttons
 
-2. Navigate to the project directory:
-   ```bash
-   cd your-profile-page
-   ```
+## How to Run
 
-3. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   bun install
-   ```
+Simply open the `index.html` file in any modern web browser.
 
-### Development
+## Design Specifications Implemented
 
-Start the development server:
+- **Typography**:
+  - Font Family: Inter
+  - Heading: 24px, SemiBold
+  - Labels: 14px, Medium
+  - Input text: 14px, Regular
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-bun dev
-```
+- **Colors**:
+  - Background: #2B414F (Dark Slate Blue)
+  - Headings: #FFFFFF
+  - Labels: #C6B98B (Gold tone)
+  - Input text & placeholder: #999999
+  - Submit Button: #295BFF with white text
+  - Cancel Button: Transparent with white border and text
 
-The application will be available at `http://localhost:8080`.
+- **Layout**:
+  - Form field padding: 12px vertical, 16px horizontal
+  - Section padding: 40px top, 40px left/right
+  - Gap between fields: 32px vertically
+  - Button spacing: 24px between Cancel and Submit
+  - Form border radius: 8px
+  - Buttons and dropdowns height: 40px
+  - Buttons minimum width: 140px
 
-### Build
+## Responsive Breakpoints
 
-Create a production build:
+- **Desktop**: 769px and above
+- **Mobile**: 768px and below
 
-```bash
-npm run build
-# or
-yarn build
-# or
-bun build
-```
-
-Preview the production build:
-
-```bash
-npm run preview
-# or
-yarn preview
-# or
-bun preview
-```
-
-## Components
-
-### ProfileForm
-
-The main profile creation form component located at [`src/components/ProfileForm.tsx`](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/components/ProfileForm.tsx). It includes:
-
-- First and last name inputs
-- Email and mobile number fields
-- Role selection dropdown (Producer, Director, Cinematographer, Editor, Sound Designer)
-- Specialty type selection (Film Production, Commercial, Documentary, Music Video, Corporate Video)
-- Producer checkbox
-- Country and city selection dropdowns
-- Submit and cancel buttons
-
-### ProfileHeader
-
-The application header component located at [`src/components/ProfileHeader.tsx`](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/components/ProfileHeader.tsx). It displays:
-
-- TLT Portal branding with building icon
-- User profile section with avatar
-
-## Pages
-
-### Index
-
-The main page component located at [`src/pages/Index.tsx`](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/pages/Index.tsx) that renders the profile header and form.
-
-### NotFound
-
-The 404 error page component located at [`src/pages/NotFound.tsx`](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/pages/NotFound.tsx) that handles undefined routes.
-
-## Styling
-
-The application uses Tailwind CSS for styling with a custom color palette defined in the [tailwind.config.ts](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/tailwind.config.ts) file. shadcn/ui components are used for consistent UI elements with built-in accessibility support.
-
-Custom colors are defined using CSS variables in the [src/index.css](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/index.css) file.
-
-## Routing
-
-The application uses React Router v6 for client-side routing:
-
-- `/` - Main profile page
-- `*` - Catch-all route for 404 errors
-
-Routes are defined in the [App.tsx](file:///c%3A/Users/Piyush%20Mishra/Documents/Assessments/The%20Leadership%20Thread/TLT%20-%20Assignment%20for%20Full%20Stack%20Developer%20Role%20-%20V2/Your-Profile-Page/src/App.tsx) file.
-
-## Available Scripts
-
-- `dev` - Start development server
-- `build` - Create production build
-- `build:dev` - Create development build
-- `lint` - Run ESLint
-- `preview` - Preview production build
-
-Run scripts using npm, yarn, or bun:
-
-```bash
-npm run <script-name>
-yarn <script-name>
-bun run <script-name>
-```
+The layout automatically adjusts to provide an optimal viewing experience on both desktop and mobile devices.

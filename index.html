@@ -1,25 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TLT Portal - Create Your Profile</title>
-    <meta name="description" content="Professional profile management portal for TLT. Create and manage your professional profile with ease." />
-    <meta name="author" content="TLT Portal" />
+    <meta name="description" content="Professional profile management portal for TLT. Create and manage your professional profile with ease.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M3 9H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 21V9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1 class="logo-title">TLT Portal</h1>
+                    <p class="logo-subtitle">Professional Profile Management</p>
+                </div>
+            </div>
+            
+            <div class="user-info">
+                <div class="user-text">
+                    <span class="user-name">John Doe</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+                <div class="user-avatar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="#C6B98B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="#C6B98B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <meta property="og:title" content="TLT Portal - Create Your Profile" />
-    <meta property="og:description" content="Professional profile management portal for TLT. Create and manage your professional profile with ease." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
+    <!-- Main Content -->
+    <main class="main">
+        <div class="form-container">
+            <div class="form-header">
+                <h2 class="form-title">Create Your Profile</h2>
+            </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@tlt_portal" />
-    <meta name="twitter:image" content="" />
-  </head>
+            <form class="profile-form">
+                <!-- Name Fields -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">Your Name</label>
+                        <input id="firstName" class="form-input" placeholder="First Name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="form-label invisible">Last Name</label>
+                        <input id="lastName" class="form-input" placeholder="Last Name" type="text">
+                    </div>
+                </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+                <!-- Email and Mobile -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input id="email" class="form-input" placeholder="Enter your email" type="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile" class="form-label">Mobile No.</label>
+                        <input id="mobile" class="form-input" placeholder="Enter your mobile number" type="tel">
+                    </div>
+                </div>
+
+                <!-- Role and Specialty -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="role" class="form-label">Select Primary Role</label>
+                        <div class="select-wrapper">
+                            <select id="role" class="form-select">
+                                <option value="" disabled selected>Choose your role</option>
+                                <option value="producer">Producer</option>
+                                <option value="director">Director</option>
+                                <option value="cinematographer">Cinematographer</option>
+                                <option value="editor">Editor</option>
+                                <option value="sound-designer">Sound Designer</option>
+                            </select>
+                            <div class="select-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="specialty" class="form-label">Specialty Type</label>
+                        <div class="select-wrapper">
+                            <select id="specialty" class="form-select">
+                                <option value="" disabled selected>Select specialty</option>
+                                <option value="film">Film Production</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="documentary">Documentary</option>
+                                <option value="music-video">Music Video</option>
+                                <option value="corporate">Corporate Video</option>
+                            </select>
+                            <div class="select-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producer Checkbox -->
+                <div class="checkbox-container">
+                    <div class="checkbox-wrapper">
+                        <input id="producer" class="form-checkbox" type="checkbox">
+                        <label for="producer" class="checkbox-label">Is this user a producer?</label>
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group full-width">
+                    <label for="country" class="form-label">Location</label>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="select-wrapper">
+                                <select id="country" class="form-select">
+                                    <option value="" disabled selected>Select country</option>
+                                    <option value="us">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="au">Australia</option>
+                                    <option value="in">India</option>
+                                </select>
+                                <div class="select-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="select-wrapper">
+                                <select id="city" class="form-select">
+                                    <option value="" disabled selected>Select city</option>
+                                    <option value="ny">New York</option>
+                                    <option value="la">Los Angeles</option>
+                                    <option value="london">London</option>
+                                    <option value="toronto">Toronto</option>
+                                    <option value="mumbai">Mumbai</option>
+                                </select>
+                                <div class="select-arrow">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 9L12 15L18 9" stroke="#999999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="button-container">
+                    <button type="button" class="btn btn-outline">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
 </html>
